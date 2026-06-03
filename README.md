@@ -1,1 +1,2 @@
 # EventPass
+EventPass is a modern QR-based event registration and ticket management platform that enables organizers to create events, sell tickets, verify attendees through QR scanning, and manage event operations from a unified dashboard.
