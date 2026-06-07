@@ -10,6 +10,7 @@ export interface IEvent extends Document {
     price: number;
     capacity: number;
     registeredCount: number;
+    banner: string;
     status: "draft" | "published" | "completed";
 }
 
@@ -61,6 +62,10 @@ const eventSchema = new mongoose.Schema<IEvent>(
             default: 0,
         },
 
+        banner: {
+            type: String,
+            default: "https://images.unsplash.com/photo-1559311648-d46f5d8593d6?q=80&w=2650",
+        },
         status: {
             type: String,
             enum: ["draft", "published", "completed"],

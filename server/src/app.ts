@@ -3,6 +3,9 @@ import cors from "cors";
 import authRoutes from "./routes/auth.routes";
 import eventRoutes from "./routes/event.routes";
 import paymentRoutes from "./routes/payment.routes";
+import ticketRoutes from "./routes/ticket.routes";
+import scannerRoutes from "./routes/scanner.routes";
+
 const app = express();
 
 app.use(cors());
@@ -18,5 +21,6 @@ app.get("/", (_req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/payments", paymentRoutes);
-
+app.use("/api/tickets", ticketRoutes);
+app.use("/api/scanner", scannerRoutes);
 export default app;
