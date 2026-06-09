@@ -18,6 +18,35 @@ export const getEvents = async (
     });
 };
 
+
+export const getAllEventsAdmin = async (
+    _req: Request,
+    res: Response
+) => {
+    const events = await Event.find().sort({ createdAt: -1 });
+
+    res.json({
+        success: true,
+        events,
+    });
+};
+export const deleteEvent =
+    async (
+        req: Request,
+        res: Response
+    ) => {
+
+        await Event.findByIdAndDelete(
+            req.params.id
+        );
+
+        res.json({
+            success: true,
+            message:
+                "Event deleted"
+        });
+    };
+
 export const getEventBySlug = async (
     req: Request,
     res: Response
@@ -44,7 +73,7 @@ export const createEvent = async (
     res: Response
 ) => {
     try {
-        const slug = generateSlug(
+        const slug = await generateSlug(
             req.body.title
         );
 
