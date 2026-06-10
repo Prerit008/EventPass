@@ -21,3 +21,15 @@ export const deleteEvent =
 
         return response.data;
     };
+
+export const createEvent =
+    async (eventData: any) => {
+
+        const response =
+            await api.post(
+                "/events",
+                eventData
+            );
+
+        return response.data;
+    };
